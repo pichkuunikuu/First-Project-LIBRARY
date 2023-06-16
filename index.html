@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Library</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">Library System</div>
+			<ul>
+				<a href="#books_section"><li>Books</li></a>
+				<a href="#register_section"><li>Register</li></a>
+				<a href="#"><li>Contact Us</li></a>
+				<a href="#"><li>Logout</li></a>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<!-- books list section -->
+		<section id="books_section">
+			<h1>Books</h1>
+			<table>
+
+				<col class="cl1">
+				<col class="cl2">
+				<col class="cl3">
+				<col class="cl4">
+				<col class="cl5">
+
+				<thead>
+					<tr>
+						<th>Books ID</th>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Genre 1</th>
+						<th>Availablity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>
+							<a href="https://en.wikipedia.org/wiki/The_God_of_Small_Things" target="blank"><h3>The God of Small Things</h3></a>
+							<table class="detail">
+								<tr><td>Publication Date : March 15, 1997</td></tr>
+								<tr><td>Page Count : 333</td></tr>
+								<tr><td>ISBN : 	0-06-097749-3</td></tr>
+							</table>
+						</td>
+						<td>Arundhati Roy</td>
+						<td>Novel</td>
+						<td>Available</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>
+							<a href="https://en.wikipedia.org/wiki/A_Suitable_Boy" target="blank"><h3>A Suitable Boy</h3></a>
+							<table class="detail">
+								<tr><td>Publication Date : May 1993</td></tr>
+								<tr><td>Page Count : 1,349</td></tr>
+								<tr><td>ISBN : 0-06-017012-3</td></tr>
+							</table>
+						</td>
+						<td>Vikram Seth</td>
+						<td>Romatic Novel</td>
+						<td>Available</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>
+							<a href="https://books.google.co.in/books/about/India_Divided.html?id=iroI_C8GTFsC&source=kp_book_description&redir_esc=y" target="blank"><h3>India Divided</h3></a>
+							<table class="detail">
+								<tr><td>Publication Date : January 1946</td></tr>
+								<tr><td>Page Count : 584</td></tr>
+								<tr><td>ISBN :  0-67-008334-8</td></tr>
+							</table>
+						</td>
+						<td>Rajendra Prasad</td>
+						<td>History</td>
+						<td>Not Available</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>
+							<a href="https://en.wikipedia.org/wiki/Harry_Potter" target="blank"><h3>Harry Potter</h3></a>
+							<table class="detail">
+								<tr><td>Publication Date : July 21, 2007</td></tr>
+								<tr><td>Page Count : 223</td></tr>
+								<tr><td>ISBN : 0-74-753274-5</td></tr>
+							</table>
+						</td>
+						<td>J.K. Rowling</td>
+						<td>Fantasy</td>
+						<td>Not Available</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>
+							<a href="https://www.google.co.in/books/edition/The_Principia/uLaXBAAAQBAJ?hl=en&gbpv=0" target="blank"><h3>The Principia</h3></a>
+							<table class="detail">
+								<tr><td>Publication Date : July 5,1687</td></tr>
+								<tr><td>Page Count : 581</td></tr>
+								<tr><td>ISBN : 1-60-796240-3</td></tr>
+							</table>
+						</td>
+						<td>Issac Newton</td>
+						<td>Treatise</td>
+						<td>Available</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- register section -->
+		<section id="register_section">
+			<h1>Register</h1>
+			<form method="get" target="_self">
+				<label for="fname">First Name :
+					<input type="text" id="fname" placeholder="Enter First Name Here" /required>
+				</label>
+				<label for="lname">Last Name :
+					<input type="text" id="lname" placeholder="Enter Last Name Here" /required>
+				</label>
+				<label for="dob">Date Of Birth :
+					<input type="date" id="dob" /required>
+				</label>
+				<label for="age">Age :
+					<input type="number" id="age" min="5" max="100" placeholder="Enter Your Age Here" /required>
+				</label>
+				<label for="email">Email :
+					<input type="email" id="email" placeholder="Enter Last Name Here" /required>
+				</label>
+				<label for="password">Password :
+					<input type="password" id="password" minlength="8" placeholder="Enter Password Here" /required>
+				</label>
+				<label for="confirm_password">Confirm Password :
+					<input type="password" id="confirm_password" minlength="8" placeholder="Re-enter Password" /required>
+				</label>
+				<input type="submit" value="Register Now" id="register">
+			</form>
+		</section>
+	</main>
+
+	<!-- confirm password js code -->
+
+	<script type="text/javascript">
+		var password = document.getElementById("password"),
+			confirm_password = document.getElementById("confirm_password");
+
+		function validatePassword(){
+			if(password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Passwords Don't Match");
+			} else {
+				confirm_password.setCustomValidity('');
+			}
+		}
+
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+	</script>
+</body>
+</html>
